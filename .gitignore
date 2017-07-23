@@ -1,0 +1,5 @@
+
+# The bits we don't need to check-in, to avoid bloat.
+
+obj/
+bin/
