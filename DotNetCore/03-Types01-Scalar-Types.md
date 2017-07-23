@@ -35,3 +35,9 @@ because it is static, so it's easier to see what's going on.
 See language reference:
 - https://github.com/dotnet/csharplang/blob/master/spec/introduction.md#types-and-variables
 
+
+----
+| These Notes         |
+|---------------------|
+| Warwick Molloy      |
+| (c) Copyright 2017  |

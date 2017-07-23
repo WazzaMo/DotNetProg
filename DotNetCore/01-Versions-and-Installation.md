@@ -36,7 +36,7 @@ See the draft language reference projects:
 
 
 ----
-| Info |                                   |
-|------|-----------------------------------|
-|Author|Warwick Molloy                     |
-|      | (c) Copyright 2017 Warwick Molloy |
+| These Notes         |
+|---------------------|
+| Warwick Molloy      |
+| (c) Copyright 2017  |

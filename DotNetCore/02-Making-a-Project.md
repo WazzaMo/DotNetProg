@@ -36,3 +36,9 @@ $ dotnet run
 Hello World!
 ```
 
+
+----
+| These Notes         |
+|---------------------|
+| Warwick Molloy      |
+| (c) Copyright 2017  |
