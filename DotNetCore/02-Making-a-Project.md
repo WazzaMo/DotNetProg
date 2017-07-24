@@ -20,7 +20,8 @@ dotnet new console -o Scalars
 dotnet restore
 ```
 
-The `dotnet restore` command is needed prior to DotNetCore 2 but from 2, the tools will 'restore' the project for you after creation.
+The `dotnet restore` command is needed in DotNetCore Version 1.0 and 1.1 but from 2 onwards,
+the tools will 'restore' the project for you after creation.
 
 Restoring downloads the necessary runtime classes and any open source Nuget
 packages neeeded for your project to be compiled and executed.

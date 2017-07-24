@@ -1,4 +1,4 @@
-# Static Classes, Functions, Lambdas and Delegates
+# Static Classes and Functions
 
 ## Functional Programming and Decomposition
 There are times when a pure function is all that is needed because they solve
@@ -35,7 +35,7 @@ public static class PureFuncs
 
     public static int GetCounter()
     {
-        return Counter;
+        return Counter; // <--- Not a pure function but not an error
     }
 
     public static void Count()
@@ -48,6 +48,45 @@ public static class PureFuncs
 ## Functions
 A function (in the mathematical sense) takes one or more values in as the domain
 and produces output in a certain range.  A key feature of a pure function is that
-they produce a consistent, predictable output for the same input.
+they produce a consistent, predictable output for the same input.  
 
-Static methods can be pure functions if they do not store any values in static variables.
+Static methods can be pure functions if they do not refer to or store any values in static variables.
+Because of the predictable
+nature of a pure function, they are easier to test and, as a software design
+tactic, using them where possible leads to fewer bugs.
+
+```CS
+public static class PureFuncs
+{
+    private static int Counter = 0;
+
+    public static int Increment(int value)
+    {
+        return value + 1; // Pure function
+    }
+
+    public static int Decrement(int value)  // <--- Now has the 'static' keyword so OK
+    {
+        return value - 1; // Pure function
+    }
+
+    public static int GetCounter()
+    {
+        return Counter; // <--- Not a pure function but not an error
+    }
+
+    public static void Count()
+    {
+        Counter++;      // <--- Not a pure function but not an error
+    }
+}
+```
+
+
+
+
+----
+| These Notes         |
+|---------------------|
+| Warwick Molloy      |
+| (c) Copyright 2017  |

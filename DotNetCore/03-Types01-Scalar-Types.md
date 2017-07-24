@@ -34,9 +34,12 @@ because it is static, so it's easier to see what's going on.
 Take a look at the C# language reference and become familiar with the operators that can
 be performed on numeric scalar functions, such as + - and so on.
 
-See language reference:
-- https://github.com/dotnet/csharplang/blob/master/spec/introduction.md#types-and-variables
+# Reference
+### See C# Language Reference on GitHub
+https://github.com/dotnet/csharplang/blob/master/spec/introduction.md#types-and-variables
 
+### See Scalar Types Example Code
+https://github.com/WazzaMo/DotNetProg/tree/master/DotNetCore/Examples/CSharpConsoleApp/Scalars
 
 ----
 | These Notes         |
