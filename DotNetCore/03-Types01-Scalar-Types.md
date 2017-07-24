@@ -30,11 +30,16 @@ See the /Examples/CSharpConsoleApp/*Scalars* project.
 The static class called *ScalarsAndValues* just has regular functions,
 because it is static, so it's easier to see what's going on.
 
+## Exercise
+Take a look at the C# language reference and become familiar with the operators that can
+be performed on numeric scalar functions, such as + - and so on.
 
+# Reference
+### See C# Language Reference on GitHub
+https://github.com/dotnet/csharplang/blob/master/spec/introduction.md#types-and-variables
 
-See language reference:
-- https://github.com/dotnet/csharplang/blob/master/spec/introduction.md#types-and-variables
-
+### See Scalar Types Example Code
+https://github.com/WazzaMo/DotNetProg/tree/master/DotNetCore/Examples/CSharpConsoleApp/Scalars
 
 ----
 | These Notes         |
