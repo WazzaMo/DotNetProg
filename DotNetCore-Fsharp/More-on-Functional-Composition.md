@@ -32,4 +32,14 @@ let add_2 = add_x 2             // Leaves one parameter open - thus this is a fu
 let sum_2_and_6 = add_2 6
 ```
 
+Because all functions, even those taking multiple parameters, are considered like
+a composition of smaller functions that each take one argument there is a simple
+and consistent model of functional composition.  F# is not unique in this and it's
+shared with other functional languages.
+
+
+# References
+
+### Wikibooks on Higher Order Functions
+https://en.wikibooks.org/wiki/F_Sharp_Programming/Higher_Order_Functions
 
