@@ -1,4 +1,4 @@
-# Types #3 - Namespaces and Reference Types
+# Types #3 - Namespaces, Arrays and Reference Types
 ## Namespaces
 Namespaces allow .NET code to be organised into hierarchical groups that can
 each contain classes and structs.  The hierarchy is achieved by using a 
@@ -69,13 +69,44 @@ namespace KungFoo {
 ```
 
 ## Reference Types
+### General
+Reference types are used where a larger value entity is needed to store
+information for the program.  The general assumption is that the
+view of this large entity should be sharable by various parts
+of the same program and references to this common entity can be
+held by different parts of the program.
+
+.NET provides garbage collection that supports cleaning up large
+entities in memory that are no longer needed when all the references
+to them have been forgotten (basically overwritten).
+
+### String as an Example of a Built-in Reference Type
 C# supports a string of Unicode characters as a datatype - C# has a keyword `string` for this type
 and also a class `String` in the `System` namespace called, `System.String` in its fully-qualified form.
-Unlike scalar types like integers (int), a string has a generally larger memory footprint that depends on how long
-the text is within, and so they are allocated on the heap and garbage collected, automatically, when no longer used.
+Unlike scalar types like integers (int), a string can have a much larger memory footprint, depending on text within.
+Because they are reference types, they are allocated on the heap (not stack like value types) 
+and garbage collected, automatically, when no longer used.
 
 Passing a string value from a caller to a function or method does not copy the string, as this would be
-expensive computationally but instead passes a reference to the in-memory object.
+expensive computationally (involving lots of processing) but instead only a reference is passed.
+
+### Arrays of Values as Another Reference Type
+Many languages support the idea of arrays - a single entity make up of a repeated block of things.
+Arrays in C# can hold a block of scalar types (bool, int, char etc), of value types (struct, enum) or
+references (to reference types).  As such, they are large, complex entities that are allocated
+on the heap and are reference types.
+
+Arrays are declared using the square brackets `[`and `]` and each item in the block of items
+can be accessed with an index.  Examples will help demonstrate:
+#### Basic Array of 3 Integers
+```cs
+int[] MyNumbers = new int[3] { 10, 20, 30 };
+//--
+int firstItem = MyNumbers[0];  // Array indicies start with 0
+int secondItem = MyNumbers[1];
+int thirdItem = MyNumbers[2];
+int howManyItems = MyNumbers.Length;
+```
 
 ### For Deeper Contemplation
 References are a variable value where the value is the heap address of the big object in the heap memory.

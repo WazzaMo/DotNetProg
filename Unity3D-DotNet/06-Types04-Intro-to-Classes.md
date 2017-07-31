@@ -1,9 +1,14 @@
-# Classes 101
+# Introduction to Classes
 This is the first part on classes and then we'll expand on our discussion of classes.
 A class is a definition of a complex entity that stores different types of information
 on the Heap.  Being on the Heap gives a number of benefits but they come with some penalty - a tradeoff
 between performance and utility - and that's why C# gives you the option for Structures 
 and Classes.
+
+Class defintions use Access Modifiers such as `public` and `private` (there are more).
+We won't discuss them in detail now but will do so in the next section on classes.
+For now it is enough to understand that public things can be used by other class methods
+and private things cannot.
 
 ## Encapsulation
 ### In a Simple Class
