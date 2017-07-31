@@ -1,13 +1,16 @@
 # Types #2 - Value Types
 ## Overview
 Like Scalar Types, Value Types are passed by value when used
-in a function call.  But Value Types is the bigger, more general
-set... let me explain.
+in a function call so all Scalars are Value Types but Value Types go beyond Scalars, basic numbers and characters,
+by supporting `enum` and `struct` declarations.
 
-Scalar Types can only represent numbers and Boolean values (true / false)
-but what if you wanted to represent complex numbers?
+Imagine you want to represent a set of values that are named and limited in the number of values.
+For instance, compass directions North, East, South and West.  This is where *enum*s (short for enumerations) are useful.
 
-## Structures as Value Types
+What if you wanted to represent complex numbers - with their real and imaginary component?
+This is where structures or *struct*s are useful.
+
+## Structures
 In C# you can define a structure, using the `struct` keyword, to store multiple values as a Value Type.
 There can be performance benefits in doing this in method calls, especially in
 repetitive calls, as this is done very efficiently in the .NET runtime with much
@@ -43,12 +46,47 @@ public static ComplexMath {
 }
 ```
 
-# Standard Structures in .NET
 ## The Scalar Types have Structure Representation
 Each of the scalar types have structures that represent them and provide utility
 static methods.  Structures are also Value Types, like the scalars themselves,
 so really the C# scalar types and keyword are substituted by the compiler for
 their structure counterparts.
+
+## Enumerations - enums
+C# lets you define a value that has named values.  The compass points were
+used as an example before and in code that looks like this:
+```cs
+public enum Compass {
+    North,
+    East,
+    South,
+    West
+}
+
+```
+Then these `Compass` values can be used in code and they are passed by value (are Value Types).
+For example:
+```cs
+public static class Foo {
+    public static Compass GetSunsDirectionByTime(DateTime moment) {
+        if (moment.Hour > 12) {
+            return Compass.West;
+        } else {
+            return Compass.East;
+        }
+    }
+}
+```
+
+Enumerations are stored as numeric values under the covers.  The names are treated like constant references
+to a value, so for instance `North` might equal `1`, and this makes it easier for .NET to compare
+the values and store them.  You can deliberately associate enumerations with
+a number type and declare the numeric values you want associated with each name.  The application
+of this means you can then rank the names and treat one as being greater than the other.
+
+It is possible to treat enums as bitwise flags which is useful for dealing with low-level hardware
+registers and binary protocols or file formats. 
+**See enum reference below for more.**
 
 # Alternate Ways to Pass Value Types to a Function or Method
 
@@ -94,6 +132,12 @@ it always has a value.
 # References
 ### See the code Example for ValueTypes.
 https://github.com/WazzaMo/DotNetProg/tree/master/DotNetCore/Examples/CSharpConsoleApp/ValueTypes
+
+### Enum Types and Uses
+https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/enum
+
+### Enum Type Reference (methods)
+https://msdn.microsoft.com/en-us/library/system.enum(v=vs.110).aspx
 
 ### Tuples and C# 7
 http://our.componentone.com/2017/01/30/tackling-tuples-understanding-the-new-c-7-value-type/
